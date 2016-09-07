@@ -6,6 +6,7 @@ import mainPackage.Player;
 public class MainMenu 
 {
 	final static Player [] playerDatabase = new Player[20];
+	final static Player [] loginPlayers = new Player[2];
 	final static Scanner sc = new Scanner(System.in);
 	
 	public static void main(String[] args)
@@ -49,8 +50,8 @@ public class MainMenu
 				playGame();
 				break;
 			
-			case 4:
-				playGame();
+			case 5:
+				exitProgram();
 				break;
 			
 			default:
@@ -126,19 +127,60 @@ public class MainMenu
 			{
 				if(searchedUser.equals(playerDatabase[i].getUsername()))
 				{
-					System.out.println("Enter this User's Password:");
-	      	String password= sc.next(); // searches for input id then prints
-	      	if(password.equals(playerDatabase[i].getPassWord()))
-	      	{
-	          System.out.println("Valid username and Password, logging in now");
-	          //set player1 == playerDatabase[i];
-	          break;
-	      	}
-	      	else
-	      	{
-	          System.out.println("Invalid username and Password, logging in now");
-	          break;
-	      	}
+					System.out.println("Enter this User's Password:");	
+					String password= sc.next(); // searches for input id then prints
+					if(password.equals(playerDatabase[i].getPassword()))
+					{
+						System.out.println("Valid username and Password, logging in now")
+						loginPlayer[0] = playerDatabase[i]; // set player 1 to login player
+						break;
+						}
+					else
+					{
+						System.out.println("Invalid username and Password, logging in now");
+						break;
+					}
+				}
+			}
+			else
+			{
+				System.out.println("Invalid ID input");
+				break;
+			}
+		}
+  	return;
+	}
+	public static void loginPlayer2() //9
+	{
+		System.out.println("Enter a valid player Username:");
+		String searchedUser= sc.next(); // searches for input id then prints
+		
+		int i;
+		int j = playerDatabase.length;
+		System.out.println("----------------------------------------------");
+		for(i=0; i < j; i++)
+		{
+			if (playerDatabase[i] == null)
+			{
+				continue;
+			}
+			else
+			{
+				if(searchedUser.equals(playerDatabase[i].getUsername()))
+				{
+					System.out.println("Enter this User's Password:");	
+					String password= sc.next(); // searches for input id then prints
+					if(password.equals(playerDatabase[i].getPassword()))
+					{
+						System.out.println("Valid username and Password, logging in now")
+						loginPlayer[1] = playerDatabase[i]; // set player 1 to login player
+						break;
+						}
+					else
+					{
+						System.out.println("Invalid username and Password, logging in now");
+						break;
+					}
 				}
 			}
 			else
