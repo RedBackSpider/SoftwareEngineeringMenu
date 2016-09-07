@@ -60,7 +60,7 @@ public class MainMenu
 			default:
 				System.out.println("Error - invalid selection!");
 			}
-			System.out.print()
+			System.out.print();
 		}
 		while (userInput != 0);
 	}
@@ -132,7 +132,7 @@ public class MainMenu
 				String password= sc.next(); 
 				if(password.equals(playerDatabase[i].getPassword()))
 				{
-					System.out.println("Valid username and Password, logging in now")
+					System.out.println("Valid username and Password, logging in now");
 					loginPlayer[0] = playerDatabase[i]; 
 					break;
 				}
@@ -170,7 +170,7 @@ public class MainMenu
 				String password= sc.next(); // searches for input id then prints
 				if(password.equals(playerDatabase[i].getPassword()))
 				{
-					System.out.println("Valid username and Password, logging in now")
+					System.out.println("Valid username and Password, logging in now");
 					loginPlayer[1] = playerDatabase[i]; // set player 1 to login player
 					break;
 				}
