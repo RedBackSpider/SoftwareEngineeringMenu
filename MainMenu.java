@@ -47,7 +47,10 @@ public class MainMenu
 				break;
 			
 			case 4:
-				playGame();
+				if(loginPlayers[0]!= null && loginPlayers[0]!= null)
+				{
+					playGame(loginPlayers[0],loginPlayers[1]);
+				}
 				break;
 			
 			case 5:
