@@ -115,7 +115,7 @@ public class MainMenu
 	public static void loginPlayer1() //9
 	{
 		System.out.println("Enter a valid player Username:");
-		String searchedUser= sc.next(); // searches for input id then prints
+		String searchedUser= sc.next();
 		
 		int i;
 		int j = playerDatabase.length;
@@ -126,23 +126,20 @@ public class MainMenu
 			{
 				continue;
 			}
-			else
+			else if(searchedUser.equals(playerDatabase[i].getUsername()))
 			{
-				if(searchedUser.equals(playerDatabase[i].getUsername()))
+				System.out.println("Enter this User's Password:");	
+				String password= sc.next(); 
+				if(password.equals(playerDatabase[i].getPassword()))
 				{
-					System.out.println("Enter this User's Password:");	
-					String password= sc.next(); // searches for input id then prints
-					if(password.equals(playerDatabase[i].getPassword()))
-					{
-						System.out.println("Valid username and Password, logging in now")
-						loginPlayer[0] = playerDatabase[i]; // set player 1 to login player
-						break;
-						}
-					else
-					{
-						System.out.println("Invalid username and Password, logging in now");
-						break;
-					}
+					System.out.println("Valid username and Password, logging in now")
+					loginPlayer[0] = playerDatabase[i]; 
+					break;
+				}
+				else
+				{
+					System.out.println("Invalid username and Password, logging in now");
+					break;
 				}
 			}
 			else
@@ -153,10 +150,10 @@ public class MainMenu
 		}
   	return;
 	}
-	public static void loginPlayer2() //9
+	public static void loginPlayer2() 
 	{
 		System.out.println("Enter a valid player Username:");
-		String searchedUser= sc.next(); // searches for input id then prints
+		String searchedUser= sc.next(); 
 		
 		int i;
 		int j = playerDatabase.length;
@@ -167,23 +164,20 @@ public class MainMenu
 			{
 				continue;
 			}
-			else
+			else if(searchedUser.equals(playerDatabase[i].getUsername()))
 			{
-				if(searchedUser.equals(playerDatabase[i].getUsername()))
+				System.out.println("Enter this User's Password:");	
+				String password= sc.next(); // searches for input id then prints
+				if(password.equals(playerDatabase[i].getPassword()))
 				{
-					System.out.println("Enter this User's Password:");	
-					String password= sc.next(); // searches for input id then prints
-					if(password.equals(playerDatabase[i].getPassword()))
-					{
-						System.out.println("Valid username and Password, logging in now")
-						loginPlayer[1] = playerDatabase[i]; // set player 1 to login player
-						break;
-						}
-					else
-					{
-						System.out.println("Invalid username and Password, logging in now");
-						break;
-					}
+					System.out.println("Valid username and Password, logging in now")
+					loginPlayer[1] = playerDatabase[i]; // set player 1 to login player
+					break;
+				}
+				else
+				{
+					System.out.println("Invalid username and Password, logging in now");
+					break;
 				}
 			}
 			else
@@ -193,5 +187,9 @@ public class MainMenu
 			}
 		}
   	return;
+	}
+	public static void exitProgram()
+	{
+		exit(0);
 	}
 }
